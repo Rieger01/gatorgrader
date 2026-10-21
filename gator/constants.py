@@ -74,7 +74,7 @@ help = create_constants(
 )
 
 # define the programming languages for comment checks
-languages = create_constants("languages", "Java", "Python")
+languages = create_constants("languages", "Java", "Python", "CPP", "JavaScript")
 
 # define the markdown indicators
 markdown = create_constants(
