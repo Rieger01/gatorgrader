@@ -126,6 +126,45 @@ def invoke_all_comment_checks(  # noqa: PLR0912, PLR0913
                 comments.count_singleline_python_comment,
                 exact,
             )
+        # check comments in C++
+        if language == constants.languages.CPP:
+            (
+                met_or_exceeded_count,
+                actual_count,
+                comment_count_details,
+            ) = entities.entity_greater_than_count(
+                filecheck,
+                directory,
+                expected_count,
+                comments.count_singleline_cpp_comment,
+                exact,
+            )
+        # check comments in C
+        if language == constants.languages.C:
+            (
+                met_or_exceeded_count,
+                actual_count,
+                comment_count_details,
+            ) = entities.entity_greater_than_count(
+                filecheck,
+                directory,
+                expected_count,
+                comments.count_singleline_c_comment,
+                exact,
+            )
+        # check comments in JavaScript
+        if language == constants.languages.JavaScript:
+            (
+                met_or_exceeded_count,
+                actual_count,
+                comment_count_details,
+            ) = entities.entity_greater_than_count(
+                filecheck,
+                directory,
+                expected_count,
+                comments.count_singleline_javascript_comment,
+                exact,
+            )
     # check multiple-line comments
     elif comment_type == constants.comments.Multiple_Line:
         # check comments in Java
@@ -152,6 +191,45 @@ def invoke_all_comment_checks(  # noqa: PLR0912, PLR0913
                 directory,
                 expected_count,
                 comments.count_multiline_python_comment,
+                exact,
+            )
+        # check comments in C++
+        if language == constants.languages.CPP:
+            (
+                met_or_exceeded_count,
+                actual_count,
+                comment_count_details,
+            ) = entities.entity_greater_than_count(
+                filecheck,
+                directory,
+                expected_count,
+                comments.count_multiline_cpp_comment,
+                exact,
+            )
+        # check comments in C
+        if language == constants.languages.C:
+            (
+                met_or_exceeded_count,
+                actual_count,
+                comment_count_details,
+            ) = entities.entity_greater_than_count(
+                filecheck,
+                directory,
+                expected_count,
+                comments.count_multiline_c_comment,
+                exact,
+            )
+        # check comments in JavaScript
+        if language == constants.languages.JavaScript:
+            (
+                met_or_exceeded_count,
+                actual_count,
+                comment_count_details,
+            ) = entities.entity_greater_than_count(
+                filecheck,
+                directory,
+                expected_count,
+                comments.count_multiline_javascript_comment,
                 exact,
             )
     # check comments in a not-supported language
